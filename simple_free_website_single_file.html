@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Simple Site</title>
+  <meta name="description" content="A very simple, free one‑page website you can host anywhere." />
+  <meta property="og:title" content="My Simple Site" />
+  <meta property="og:description" content="A very simple, free one‑page website you can host anywhere." />
+  <meta name="theme-color" content="#111827" />
+  <style>
+    :root{
+      --bg: #0f172a;        /* slate-900 */
+      --panel: #111827;     /* gray-900 */
+      --text: #e5e7eb;      /* gray-200 */
+      --muted: #9ca3af;     /* gray-400 */
+      --accent: #60a5fa;    /* blue-400 */
+      --accent-2:#34d399;   /* emerald-400 */
+      --ring: rgba(96,165,250,.5);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, #1f2937 0%, transparent 60%),
+                  radial-gradient(1200px 800px at 110% 10%, #111827 0%, transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding: 0 20px}
+    header{
+      position: sticky; top:0; z-index:10; backdrop-filter: blur(6px);
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+      border-bottom:1px solid #1f2937;
+    }
+    nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .logo{width:36px; height:36px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent-2));}
+    .nav-links{display:flex; gap:16px; flex-wrap:wrap}
+
+    .hero{padding:72px 0 56px}
+    .hero-inner{display:grid; grid-template-columns: 1.1fr 1fr; gap:32px; align-items:center}
+    .card{
+      background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 85%, transparent), color-mix(in srgb, #0b1220 85%, transparent));
+      border:1px solid #1f2937; border-radius: var(--radius); padding:24px; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    h1{font-size: clamp(28px, 4.2vw, 48px); line-height:1.1; margin: 0 0 12px}
+    p.lead{font-size: clamp(16px, 2.2vw, 20px); color:var(--muted); margin:0 0 20px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; border:1px solid #1f2937; border-radius:12px; padding:12px 16px; font-weight:600; cursor:pointer; background:#0b1220; color:var(--text);
+      transition: transform .08s ease, box-shadow .2s ease; box-shadow:0 6px 20px rgba(0,0,0,.25)
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{background: linear-gradient(135deg,var(--accent),var(--accent-2)); color:#0b1220}
+
+    .features{padding:40px 0}
+    .grid{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:16px}
+    .feature{padding:20px}
+    .feature h3{margin:8px 0 6px}
+    .muted{color:var(--muted)}
+
+    .about, .contact{padding:40px 0}
+    form{display:grid; gap:12px; margin-top:10px}
+    input, textarea{
+      width:100%; padding:12px 14px; border-radius:10px; border:1px solid #1f2937; background:#0b1220; color:var(--text);
+      outline:none; box-shadow:0 0 0 0 var(--ring)
+    }
+    input:focus, textarea:focus{box-shadow:0 0 0 4px var(--ring)}
+    footer{border-top:1px solid #1f2937; padding:26px 0; color:var(--muted); text-align:center}
+
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><div class="logo" aria-hidden="true">✨</div> <span>My Simple Site</span></div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <h1>Say hello to your new one‑page site</h1>
+          <p class="lead">Drop this single HTML file onto any free host (GitHub Pages, Netlify, Vercel) and you're live. Edit the text to make it yours.</p>
+          <div class="cta">
+            <a class="btn primary" href="#contact">Get in touch</a>
+            <a class="btn" href="#features">See features</a>
+          </div>
+        </div>
+        <div class="card" role="img" aria-label="Decorative preview card">
+          <h3 style="margin:0 0 10px">Quick start</h3>
+          <ol class="muted" style="margin:0; padding-left:20px">
+            <li>Click the header title to rename your site.</li>
+            <li>Replace the text and links below with your info.</li>
+            <li>Host for free on GitHub Pages or Netlify.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card feature">
+          <h3>Single File</h3>
+          <p class="muted">All HTML, CSS, and logic in one document. Easy to edit and deploy.</p>
+        </div>
+        <div class="card feature">
+          <h3>Responsive</h3>
+          <p class="muted">Looks great on phones, tablets, and desktops without extra work.</p>
+        </div>
+        <div class="card feature">
+          <h3>Accessible</h3>
+          <p class="muted">Uses semantic tags, focus states, and good contrast by default.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>About</h2>
+      <p class="muted">This is a minimal starter you can customize in minutes. Change colors by editing the CSS variables at the top of the file. Swap the emoji logo for your own image if you prefer.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <p class="muted">This form uses <code>mailto:</code> so it works without a backend. Replace the address with yours, or connect a real form service later.</p>
+      <form action="mailto:you@example.com" method="post" enctype="text/plain">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+        </label>
+        <button class="btn primary" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Your Name. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
